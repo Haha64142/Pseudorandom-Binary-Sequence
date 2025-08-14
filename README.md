@@ -1,6 +1,6 @@
 # Pseudorandom Binary Sequence (PRBS) implementation on an arduino
 
-## files:
+## Files
 - demo:
   - Contains a sample program with 3 different buttons for PRBS7, PRBS13, and PRBS20
   - Also contains an interrupt button to stop the output of the PRBS function (Each time you restart a PRBS function, it resets back to the starting value)
@@ -15,3 +15,6 @@
   - Outputs to a pin, defined by a global variable
   - Has a short sample program in the setup function
   - Only has the bare minimum to work, and uses fast write, so it should be the absolute fastest
+  - I've tested PRBS13, and got ~400,000 bits/sec, or ~0.4 Mbps
+
+> **Note**: The fast write only works on arduino AVR board, such as the Mega, UNO, and Micro. If you want to use non-AVR boards, you need to switch back to digitalWrite
